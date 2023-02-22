@@ -1,0 +1,111 @@
+<html>
+{% load static %}
+  <head>
+    <style>
+      /* Add styles for form animation */
+      .form-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+
+
+      }
+
+      body{
+        color: rgb(15, 231, 231);
+        background-image:url('login bg4.jpg') ;
+        background-size:cover;
+
+
+      }
+
+      form {
+        background-color: rgb(210, 42, 198);
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(8, 8, 8, 0.1);
+        padding: 30px;
+        width: 400px;
+        transition: all 0.4s ease-in-out;
+        transform: scale(0);
+        opacity: 0;
+
+      }
+      th {
+        text-align: left;
+        }
+
+
+
+      form.show {
+        opacity: 1;
+        transform: scale(1);
+      }
+    </style>
+  </head>
+  <body>
+  {% if message %}
+
+      {% for message in message %}
+      <div class="alert alert-info">
+      {{ message }}
+        </div>
+      {% endfor%}
+
+  {% endif %}
+
+    <div class="form-container">
+
+      <form method="post" action="#">{% csrf_token %}
+
+        <table>
+          <caption style="text-align: center; margin-left: 70px;"><h1>Sign Up</h1></caption>
+
+        <tr>
+        <div class="form-group">
+          <th><label >User Name:</label></th>
+         <td> <input type="text" name="username" required /></td>
+        </div>
+      </tr>
+      <tr>
+        <div class="form-group">
+          <th><label >First Name</label></th>
+          <td><input type="text" name="first_name" required /></td>
+        </div>
+      </tr>
+      <tr>
+        <div class="form-group">
+          <th><label >Last Name</label></th>
+          <td><input type="text" name="last_name" required /></td>
+        </div>
+      </tr>
+        <tr>
+        <div class="form-group">
+          <th><label >Email:</label></th>
+          <td><input type="email" name="email" required /></td>
+        </div>
+        </tr>
+        <tr>
+        <div class="form-group">
+          <th><label >Password:</label></th>
+         <td><input type="password" name="password" required /></td>
+        </div>
+        </tr>
+        <tr>
+        <th><button type="submit">Sign Up</button></th>
+        </tr>
+        </table>
+      </form>
+    </div>
+
+    <!-- Add JavaScript for form animation -->
+    <script>
+      const form = document.querySelector("form");
+
+      setTimeout(() => {
+        form.classList.add("show");
+      }, 100);
+    </script>
+  </body>
+</html>

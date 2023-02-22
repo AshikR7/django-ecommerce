@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <style>
+      #C,#S{
+        color:rgb(8, 8, 8) !important ;
+         
+      }
+      #flag1, #flag2{
+        display: inline;
+        margin-top: 50px;
+      
+      }
+      
+
+      .footer-clean {
+  padding:20px 0;
+  margin-top: 20px;
+  background-color:rgb(8, 8, 8);
+  color:#ffffff;
+
+}
+.container-fluid ul a{
+  text-decoration: none;
+  opacity: 0.5;
+}
+.container-fluid ul a:hover{
+  opacity: 1;
+}
+
+.footer-clean h3 {
+  margin-top:0;
+  margin-bottom:12px;
+  font-weight:bold;
+  font-size:16px;
+}
+
+.footer-clean ul {
+  padding:0;
+  list-style:none;
+  line-height:1.6;
+  font-size:14px;
+  margin-bottom:0;
+}
+
+.footer-clean ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.8;
+}
+
+.footer-clean ul a:hover {
+  opacity:1;
+}
+
+.footer-clean .item.social {
+  text-align:right;
+}
+
+@media (max-width:767px) {
+  .footer-clean .item {
+    text-align:center;
+    padding-bottom:20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-clean .item.social {
+    text-align:center;
+  }
+}
+
+.footer-clean .item.social > a {
+  font-size:24px;
+  width:40px;
+  height:40px;
+  line-height:40px;
+  display:inline-block;
+  text-align:center;
+  border-radius:50%;
+  border:1px solid #ccc;
+  margin-left:10px;
+  margin-top:22px;
+  color:inherit;
+  opacity:0.75;
+}
+
+.footer-clean .item.social > a:hover {
+  opacity:0.9;
+}
+
+@media (max-width:991px) {
+  .footer-clean .item.social > a {
+    margin-top:40px;
+  }
+}
+
+@media (max-width:767px) {
+  .footer-clean .item.social > a {
+    margin-top:10px;
+  }
+}
+
+.footer-clean .copyright {
+  margin-top:14px;
+  margin-bottom:0;
+  font-size:13px;
+  opacity:0.6;
+}
+.glow{
+  color: rgb(0, 0, 0);
+ 
+  animation-name: glowing;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  
+  
+
+}
+ 
+@keyframes glowing{
+  0%,18%,20%,50%,55%,60%,70%{
+    text-shadow: none;
+
+  }
+
+
+
+  100%{
+    
+    text-shadow:
+    0 0 10px #00b3ff,
+    0 0 20px #00b3ff,
+    0 0 25px #00b3ff;
+     
+   
+  }
+
+}
+
+  
+
+        
+
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/style.css"> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home/index</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid" style="background-color: rgb(28, 26, 26);">
+          <a class="navbar-brand" href="http://127.0.0.1:5500/index.html"><img src="{% static 'photos/logo main.png' %}" style="height: 50px;width: 50px; margin-left: 300px;"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="http://127.0.0.1:5500/index.html" style="color: white;">Store</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" style="color: white;">Events</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="http://127.0.0.1:5500/phone.html" style="color: white;">Phone</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" style="color: white;">PC</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="http://127.0.0.1:5500/login.html" target="_blank" style="color: white;">Profile</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">
+                  About
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown"   >
+                  <li><a class="dropdown-item" href="#"   >Company</a></li>
+                  <li><a class="dropdown-item" href="#"   >Support</a></li>
+                  
+                </ul>
+              </li>
+               
+            </ul>
+            <form class="d-flex" style="margin-right: 50px; ">
+              <input class="form-control me-2" type="search"   aria-label="Search">
+              <button class="btn btn-outline-light" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      <center> 
+        <div>
+      <h1 class="glow" >Best Gaming Phones</h1>
+    </center>
+      <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" >
+        <div class="carousel-inner" style=" height:700px;">
+          <div class="carousel-item active">
+            <img src="{% static 'photos/gaming.jpg' %}" class="d-block w-100  " alt="..." height="700px"> >
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'photos/gaming 2.jpg' %}" class="d-block w-100 " alt="..." height="700px">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'photos/gaming 3.jpg' %}" class="d-block w-100 " alt="..." height="700px">>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+     <!-- <a href="#"> <img src="gaming.jpg" id="im">  </a> -->
+     <div>
+      <center> 
+     <h1 class="glow"  >Best Gaming PC</h1>
+    </center>
+     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" >
+      <div class="carousel-inner" style="height: 700px;">
+        <div class="carousel-item active">
+          <img src="pc 1.jpg" class="d-block w-100 " alt="..." height="700px">
+        </div>
+        <div class="carousel-item">
+          <img src="pc4.jpg" class="d-block w-100 " alt="..." height="700px">
+        </div>
+        <div class="carousel-item">
+          <img src="pc 5.jpg" class="d-block w-100 " alt="..." height="700px">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+     </div>
+     <div style="margin-top: 55px; margin-left: 25px;" id="flag1">
+      <center> 
+       <h1 class="glow" >Flagship Phones</h1>
+      </center>
+      <img src="flag1.jpg" height="600px" width="900px" style="margin-left: 30px;" >
+     </div>
+     <div style="margin-top: 55px; margin-left: 25px;" id="flag2">
+      <img src="flag2.jpg" height="600px" width="900px"   >
+     </div>
+
+     <div class="footer-clean">
+      <footer>
+          <div class="container">
+              <div class="row justify-content-center">
+                  <div class="col-sm-4 col-md-3 item">
+                      <h3>Shop</h3>
+                      <ul>
+                          <li><a href="#">Flagship Phones</a></li>
+                          <li><a href="#">Gaming PC</a></li>
+                          <li><a href="#">Gaming Phone</a></li>
+                      </ul>
+                  </div>
+                  <div class="col-sm-4 col-md-3 item">
+                      <h3>About</h3>
+                      <ul>
+                          <li><a href="#">Company</a></li>
+                          <li><a href="#">Legacy</a></li>
+                      </ul>
+                  </div>
+                  <div class="col-sm-4 col-md-3 item">
+                      <h3>Values</h3>
+                      <ul>
+                          <li><a href="#">Supplier Responsibility</a></li>
+                          <li><a href="#">Privacy</a></li>
+                          <li><a href="#">Accessibility</a></li>
+                      </ul>
+                  </div>
+                  <div class="col-lg-3 item social">
+                    <a href="#"><i class="icon ion-social-facebook"></i></a>
+                    <a href="#"><i class="icon ion-social-twitter"></i></a>
+                    <a href="#"><i class="icon ion-social-snapchat"></i></a>
+                    <a href="#"><i class="icon ion-social-instagram"></i></a>
+                      <p class="copyright">AR7 Production © 2023</p>
+                  </div>
+              </div>
+          </div>
+      </footer>
+  </div> 
+
+    
+</body>
+</html>

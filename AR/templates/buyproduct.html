@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+  <h1>Buy </h1>
+ <label>Product name</label>
+  <input type="text" name="name" readonly value="{{a.name}}"><br><br>
+  <label>Product Price</label>
+  <input type="text" name="price" readonly value="{{a.price}}"><br><br>
+    <img src="/static/products/{{im}}" width="200px">
+    <label>Quantity</label>
+  <input type="number" name="quantity"><br><br>
+    <button type="submit">Oder</button>
+</form>
+
+</body>
+</html>

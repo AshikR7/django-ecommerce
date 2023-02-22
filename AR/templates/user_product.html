@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="row">
+    {% for i,j,k,l in mylist %}
+    <div class="col">
+        <div class="card" style="width: 18rem;">
+        <img src="/static/products/{{k}}" class="card-img-top" width="200px">
+          <div class="card-body">
+          <h5 class="card-title">{{i}}</h5>
+          <p class="card-text">Price={{j}}</p>
+          <a href="http://127.0.0.1:8000/AR/cart/{{l}}" class="btn btn-primary">Add to cart</a>
+              <a href="http://127.0.0.1:8000/AR/wish/{{l}}" class="btn btn-danger">Add to Wishlist</a>
+        </div>
+         </div>
+    </div>
+    {% endfor %}
+    </div>
+
+</body>
+</html>
