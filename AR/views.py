@@ -275,8 +275,10 @@ def cartdis(request):
         im=i.imgfile
         img.append(str(im).split('/')[-1])
     mylist=zip(name,price,img,id)
-
-    return render(request,'cart.html',{'mylist':mylist})
+    total=0
+    for i in price:
+        total+=i
+    return render(request,'cart.html',{'mylist':mylist,'to':total})
 
 
 
@@ -330,5 +332,8 @@ def card_pay(request):
         user_obj.save()
         today=datetime.date.today()
         today+=timedelta(days=10)
-        return render(request,"success.html")
+        return render(request,"success.html",{'date':today})
     return render(request,'card_payment.html')
+
+
+
