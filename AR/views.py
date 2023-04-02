@@ -50,9 +50,12 @@ def login(request):
         if a.is_valid():
             us=a.cleaned_data["name"]
             ps=a.cleaned_data["password"]
+            # to make a variable global
+            request.session['name']=us
             b=registermodel.objects.all()
             for i in b:
                 if us==i.name and ps==i.password:
+                    request.session['id']=i.id
                     return redirect(shop_profile)
             else:
                 return HttpResponse("login Failed")
@@ -60,18 +63,20 @@ def login(request):
 
 
 def shop_profile(request):
-    return render(request,'profile.html')
+    shopname=request.session['name']
+    return render(request,'profile.html',{'shopname':shopname})
 
 
 
 def product_upload(request):
     if request.method=='POST':
         a=product_upload_form(request.POST,request.FILES)
+        id=request.session['id']
         if a.is_valid():
             pn=a.cleaned_data['name']
             pp=a.cleaned_data['price']
             fl=a.cleaned_data['imgfile']
-            b=product_upload_model(name=pn,price=pp,imgfile=fl)
+            b=product_upload_model(shop_id=id,name=pn,price=pp,imgfile=fl)
             b.save()
             return HttpResponse("Upload success")
         else:
@@ -79,12 +84,16 @@ def product_upload(request):
     return render(request,'product_upload.html')
 
 def product_display(request):
+    shopid=request.session['id']
     a=product_upload_model.objects.all()
     name=[]
     price=[]
     img=[]
     id=[]
+    shop_id=[]
     for i in a:
+        sid=i,shop_id
+        shop_id.append(sid)
         id1=i.id
         id.append(id1)
         nm=i.name
@@ -93,8 +102,8 @@ def product_display(request):
         price.append(pr)
         im=i.imgfile
         img.append(str(im).split('/')[-1])
-    mylist=zip(name,price,img,id)
-    return render(request,'product_display.html',{'mylist':mylist})
+    mylist=zip(name,price,img,id,shop_id)
+    return render(request,'product_display.html',{'mylist':mylist,'shopid':shopid})
 
 
 def product_del(request,id):
@@ -172,6 +181,7 @@ def user_login(request):
     if request.method=='POST':
         username=request.POST.get('username')
         password=request.POST.get('password')
+        request.session['username']=username
         user_obj= User.objects.filter(username=username).first()
         if user_obj is None:
             messages.success(request,'user not found')
@@ -189,7 +199,8 @@ def user_login(request):
 
 
 def user_profile(request):
-    return render(request,'user_profile.html')
+    un=request.session['username']
+    return render(request,'user_profile.html',{'username':un})
 
 
 def user_product_all(request):
@@ -334,6 +345,7 @@ def card_pay(request):
         today+=timedelta(days=10)
         return render(request,"success.html",{'date':today})
     return render(request,'card_payment.html')
+
 
 
 
